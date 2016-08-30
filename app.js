@@ -11,7 +11,7 @@ app.get('/',function (req,res)
           <body>
           <form action = '/welcome'  method = get />
            Enter Name : <input type = "text" name = "name"><br/>
-           Enter year  : <input type = "number" name = "age">
+           Enter BirthYear  : <input type = "number" name = "age">
           <input type = "submit" value = "submit" >
           </body>
           </html>
@@ -20,10 +20,10 @@ app.get('/',function (req,res)
  app.get('/welcome',function (req,res)
   {
      console.log(req.query);
-     var a = 2016;
-     var age = a - req.query.age
+     var a = new Date();
+     var b = a.getFullYear() - req.query.age
     //res.send(`Hello world ${req.query.name} - Age ${req.query.name}`)
- res.send("Hello World"+ req.query.name + ". " +"You are" + " " + age + " " +"Yers old.");
+ res.send("Hello World"+ req.query.name + ". " +"You are" + " " + b + " " +"Yers old.");
 
  })
  });
