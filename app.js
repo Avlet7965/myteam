@@ -27,12 +27,6 @@ app.get('/',function (req,res)
 
  })
  });
-
-
-
-
-
-
 //
 // app.get('/date',function(req,res){
 //
@@ -52,15 +46,6 @@ app.get('/',function (req,res)
 //
 //           `)
 // });
-
-
-
-
-
-
-
-
-
 app.listen(3000,function ()
  {
            console.log("hello world");
