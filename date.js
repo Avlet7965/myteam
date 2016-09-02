@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-app.get('/',function(req,res){
+app.get('/yesterday',function(req,res){
 
 var a = Date();
 
