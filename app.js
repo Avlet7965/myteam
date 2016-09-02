@@ -26,7 +26,7 @@ app.get('/',function (req,res)
  res.send("Hello World"+ req.query.name + ". " +"You are" + " " + b + " " +"Yers old.");
 
  })
- });
+ });/
 //
 // app.get('/date',function(req,res){
 //
