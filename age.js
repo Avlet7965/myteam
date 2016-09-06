@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.use(express.static('images'));
- 
+
 app.get('/',function(req,res){
 
   res.send(`
@@ -27,3 +27,15 @@ app.get('/home',function(req,res){
 app.listen(3000,function(){
   console.log('Hello');
 });
+
+
+
+// var data = ''
+// <style>
+// background: ${planet.color}
+// </style>
+//
+//
+//  var data = ''
+//  var i = req.params.index
+//  var planet = planets[i]

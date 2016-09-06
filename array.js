@@ -1,30 +1,54 @@
 var express = require('express');
-var app  =  express();
+var app = express();
 
+var url = require('url');
 
-var planets = [{
-              name :"Sun",
+var planets = [
+               {
+                name:"Mercuey",
+                color:"gray",
+                order: 1
+              },
+              {
+               name:"Venus",
+               color:"yellow",
+               order: 2
+             },
+             {
+              name:"Earth",
               color:"blue",
-              order: 1
-            }]
+              order: 3
+            }
+            ]
+var index  = '';
+app.get('/planet/:colorindex',function(req,res){
+ var data = '';
+     data += `<html>
+              <body>
+              <head>
+              <style>
+                 body{background: ${planets[req.params.colorindex].color}}
+                 
+              </style>
+              </head>
+              <table>`
+     for(var i in planets){
+       var planet = planets[req.params.colorindex]
+       data += `<tr>
+                <td><${planet.name}</td>
+                <td>${planet.color}</td>
+                <td>${planet.order}</td>
+                </tr>`
+      }
+      data +=`</table>
+              </body>
+               </html>`
 
-app.get('/',function(req,res){
-    var data = ''
-    data += '<table>'
-    for (var i in palnets){
-      var planet = planets[i]
-      data += `<tr>
-              <td> ${planet.name}</td>
-              </tr>`
-    }
-    data += '</table>'
-    res.send(data)
+      res.send(data);
+
 });
 
- app.get('/',function(req,res){
-   console.log(planets);
- });
 
-app.listen(1212,function(){
-  console.log("HI AVLET");
+app.listen(3000,function(){
+  console.log('Hello World');
 });
